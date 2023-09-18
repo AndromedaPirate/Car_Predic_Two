@@ -1,0 +1,18 @@
+version: '3.11'
+
+services:
+  dash:
+    command: python3 main.py
+    image: andromedapirate7777777/carpre:a2
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    volumes:
+      - ./code:/root/code
+      - ./.vscode-server:/root/.vscode-server      
+    environment:
+      - HOST=0.0.0.0
+      - PORT=80
+    ports:
+      - 4001:80
